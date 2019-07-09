@@ -1,0 +1,48 @@
+.card {
+  width: 600px;
+  background-color: #e2e1e0;
+  position: relative;
+  margin: 0 auto;
+}
+.long.arrow.alternate.left.icon {
+  height: 30px;
+  width: 200px;
+}
+#content-top {
+  color: white;
+}
+.left.floated {
+  flex-direction: row;
+}
+.ui.center.floated.header {
+  position: relative;
+  text-align: center;
+}
+.ui.center.aligned.icon.header {
+  position: relative;
+  bottom: 35px;
+}
+.titleIcons {
+  display: inline;
+}
+.fa-bookmark-o {
+  position: relative;
+  left: 450px;
+}
+#share-top {
+  position: relative;
+  /* right: 500px; */
+}
+
+#box-1 {
+  position: relative;
+  top: 40px;
+}
+#category {
+  width: 50px;
+  background-color: white;
+  position: relative;
+  left: 200px;
+  border-radius: 30px;
+  top: 30px;
+}

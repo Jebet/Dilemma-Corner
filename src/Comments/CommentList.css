@@ -1,0 +1,12 @@
+#comment-displayed {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  position: relative;
+  font-family: sans-serif;
+}
