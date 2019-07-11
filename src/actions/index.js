@@ -1,4 +1,5 @@
 import comments from "../apis/comments";
+import replies from "../apis/comments";
 import {
   CREATE_COMMENT,
   EDIT_COMMENT,
@@ -40,20 +41,21 @@ export const deleteComment = id => async dispatch => {
 };
 export const increment = () => ({ type: "INCREMENT" });
 export const decrement = () => ({ type: "DECREMENT" });
+
 //fetching replies//
-export const createReply = formValues => async dispatch => {
-  const response = await comments.post("/reply", formValues);
+export const createReply = (comment, id) => async dispatch => {
+  const response = await comments.put(`/comments/${id}`, comment);
   dispatch({ type: CREATE_REPLY, payload: response.data });
 };
 
 export const fetchReplies = () => async dispatch => {
-  const response = await comments.get("/reply");
+  const response = await replies.get("/replies");
 
   dispatch({ type: FETCH_REPLIES, payload: response.data });
 };
 
-export const fetchReply = id => async dispatch => {
-  const response = await comments.get(`/reply${id}`);
+export const fetchReply = Fid => async dispatch => {
+  const response = await replies.get(`/replies/${Fid}`);
 
   dispatch({ type: FETCH_REPLY, payload: response.data });
 };

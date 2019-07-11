@@ -1,21 +1,37 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import Moment from "react-moment";
+import { FiMessageCircle, FiRss, FiEye } from "react-icons/fi";
 import Comments from "./Comments/CommentCreate";
 import Replies from "./replies/RepliesCreate";
 import ModalPopUp from "./share/modalShare";
 
 import "./Header.css";
 
+const Tags = ({ tags }) => {
+  return (
+    <div className="col">
+      {/* {tags.map((tag, i) => ( */}
+      <small className="tag-pill">{/* {tag.value} */}Music</small>
+      {/* ))} */}
+    </div>
+  );
+};
 class Header extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      modalShow: false,
-      shareOpen: "closeShare"
+      shareOpen: "closeShare",
+      isHidden: true,
+      modalShow: false
     };
+
+    // this.updateLikes = this.updateLikes.bind(this);
     this.shareOpenToggle = this.shareOpenToggle.bind(this);
-   
+  }
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden
+    });
   }
   shareOpenToggle() {
     if (this.state.shareOpen === "closeShare") {
@@ -29,9 +45,7 @@ class Header extends React.Component {
       });
     }
   }
-  handleClose() {
-    this.setState({ show: false });
-  }
+
   render() {
     let modalClose = () => this.setState({ modalShow: false });
 
@@ -41,68 +55,73 @@ class Header extends React.Component {
     const twitterUrl = `https://twitter.com/home?status=${url}`;
     const linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}`;
     return (
-      <div>
-        <Card onClick={this.handleClose}>
-          <Card.Header style={{ backgroundColor: "white" }}>
-            {" "}
-            <Card.Title>
-              Question
-              <div className="titleIcons">
-                <span className="fa fa-bookmark-o" />
-                <span
-                  className="fa fa-share-alt "
-                  style={{ position: "relative", left: "460px", bottom: "0px" }}
-                  onClick={() => this.setState({ modalShow: true })}
-                  variant="light"
-                >
-                  {this.state.toggleButtonText}
-                  <ModalPopUp show={this.state.modalShow} onHide={modalClose} />
+      <div className="dilemma-section">
+        <div onClick={this.handleClose}>
+          <div className="header">
+            <h4> Question</h4>
+            {/* <div className="titleIcons">
+              <span className="fa fa-bookmark-o" />
+              <span
+                className="fa fa-share-alt "
+                // style={{ position: "relative", left: "460px", bottom: "0px" }}
+                // onClick={() => this.setState({ modalShow: true })}
+                variant="light"
+              >
+                <ModalPopUp show={this.state.modalShow} onHide={modalClose} />
+              </span>
+            </div> */}
+          </div>
+
+          <div className=" m-2">
+            <p>
+              Steven had been in a relationship with Emily for two years when he
+              cheated on her with Stephanie. Although Steven was the one in a
+              relationship, Stephanie knew that he was taken and yet pursued
+              Steven and then slept with him anyway. Who’s more in the wrong?
+            </p>
+            <div className="row">
+              <Tags />
+              <div className="col text-right">
+                <span className="text-muted">
+                  <small>
+                    <FiEye />
+                    10 Views
+                  </small>
+                </span>
+                <span className="ml-3 text-muted">
+                  <small>
+                    <Moment fromNow ago>
+                      2019-05-23T15:48:50.789929
+                    </Moment>
+                  </small>
                 </span>
               </div>
-            </Card.Title>
-          </Card.Header>
-          <Card.Body style={{ backgroundColor: "#e2e1e0" }}>
-            <Card.Text bg="grey">
-              <b>
-                Steven had been in a relationship with Emily for two years when
-                he cheated on her with Stephanie. Although Steven was the one in
-                a relationship, Stephanie knew that he was taken and yet pursued
-                Steven and then slept with him anyway. Who’s more in the wrong?
-              </b>
-            </Card.Text>
-            <Card.Text className="impression">
-              <div className="ui red label" alt="category">
-                Music
-              </div>
-              <i className="eye icon" />
-              180 views
-              <h7 className="timeStamp">28-Aug-19</h7>
-            </Card.Text>
-            <Card.Text className="">
-              <div className="ui blue image label">
-                <i className="edit outline icon" />
-                Replies
-                <div className="detail">31</div>
-              </div>
+            </div>
 
-              <div className="ui blue image label">
-                <i className="edit outline icon" />
-                Replies
-                <div className="detail">31</div>
+            <div className="row">
+              <div className="col">
+                <small className="card-reply">
+                  <span className="reply-icon">
+                    <FiMessageCircle /> Replies
+                  </span>
+                  <span className="reply-counter">12</span>
+                </small>
+                <small className="card-follow">
+                  <span className="follow-icon">
+                    <FiRss /> Follow
+                  </span>
+                  <span className="follow-counter">2300</span>
+                </small>
               </div>
-
-              <div className="ui blue image label">
-                <i className="rss icon" />
-                Following
-                <div className="detail">23</div>
-              </div>
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer style={{ backgroundColor: "white" }}>
-            <Comments />
-            {/* <Replies /> */}
-          </Card.Footer>
-        </Card>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <Comments />
+              {/* <Replies /> */}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

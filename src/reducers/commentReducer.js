@@ -10,7 +10,7 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_COMMENTS:
-      return { ...state, ..._.mapKeys(action.payload, "id", "reply") };
+      return { ...state, ..._.mapKeys(action.payload, "id") };
     case FETCH_COMMENT:
       return { ...state, [action.payload.id.reply]: action.payload };
     case CREATE_COMMENT:

@@ -1,12 +1,10 @@
 #comment-displayed {
-  display: flex;
-  flex-direction: row;
+  /* display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 50% 50% 1fr; */
 }
 
 .footer-icons {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  position: relative;
-  font-family: sans-serif;
+  text-align: center;
+  margin-top: 20px;
 }

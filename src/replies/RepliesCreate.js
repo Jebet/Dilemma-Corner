@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
+import { FiSend } from "react-icons/fi";
+
+import ReplyList from "./RepliesList";
 
 import { connect } from "react-redux";
 import { createReply } from "../actions";
 
 class RepliesCreate extends Component {
+  commentId = this.props.comment.id;
+  comment = this.props.comment;
+
   renderError({ error, touched }) {
     if (touched && error) {
       return (
@@ -18,13 +24,18 @@ class RepliesCreate extends Component {
     const className = `field $(meta.error && meta.touched ? 'error: '')`;
     return (
       <div className={className}>
-        <input {...input} autoComplete="off" />
+        <input
+          {...input}
+          autoComplete="off"
+          style={{ border: "5px solid #e8e6e6 " }}
+        />
         {this.renderError(meta)}
       </div>
     );
   };
   onSubmit = formValues => {
-    this.props.createReply(formValues);
+    this.comment.replies.push(formValues);
+    this.props.createReply(this.comment, this.commentId);
   };
 
   render() {
@@ -32,24 +43,25 @@ class RepliesCreate extends Component {
       <form
         onSubmit={this.props.handleSubmit(this.onSubmit)}
         className="ui form error"
-        style={{ padding: "10px" }}
       >
         <Field
-          name="reply"
+          name="description"
           component={this.renderInput}
-          className="reply_field"
+          placeholder="write your comment here"
+          className="description_field"
         />
-        <button
-          className="fa fa-paper-plane"
+        <FiSend
+          onClick={this.props.handleSubmit(this.onSubmit)}
           style={{
-            position: "relative",
-            bottom: "52px",
-            left: "522px",
-            width: "40px",
-            height: "38px"
+            position: "absolute",
+            bottom: "9px",
+            left: "92%",
+            width: "25px",
+            height: "25px",
+            cursor: "pointer",
+            color: "red"
           }}
         />
-
         {/* <i className="fa fa-paper-plane" /> */}
       </form>
     );

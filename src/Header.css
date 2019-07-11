@@ -1,3 +1,60 @@
+.dilemma-section {
+  height: 100;
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+.header {
+  background-color: #fff;
+  text-align: center;
+  min-height: 56px;
+  box-shadow: 0px 4px 4px -4px #888888;
+}
+.header h4 {
+  padding-top: 10px;
+}
+.tag-pill {
+  background-color: rgb(167, 165, 165);
+  color: #fff;
+  padding: 0 6px 2px 6px;
+  border-radius: 50px;
+  margin-right: 5px;
+  font-size: 70%;
+  font-weight: 200;
+}
+.card-reply {
+  margin-right: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #42daf5;
+  color: #42daf5;
+  font-weight: 500;
+}
+.reply-icon {
+  padding: 1px 4px;
+}
+.reply-counter {
+  background-color: #42daf5;
+  color: #fff;
+  padding: 1px 5px;
+}
+.card-follow {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #9042f5;
+  color: #9042f5;
+  font-weight: 500;
+}
+.follow-icon {
+  padding: 1px 4px;
+}
+.follow-counter {
+  background-color: #9042f5;
+  color: #fff;
+  padding: 1px 5px;
+}
+
 .card {
   width: 600px;
   background-color: #e2e1e0;

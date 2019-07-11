@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
+import { FiSend } from "react-icons/fi";
 
 import { connect } from "react-redux";
+import ReplyCreate from "../replies/RepliesCreate";
 import { createComment } from "../actions";
 
 class CommentCreate extends Component {
-  renderError({ error, touched }) {
-    if (touched && error) {
+  renderError({ error, onSubmit }) {
+    if (onSubmit && error) {
       return (
         <div className="ui error message">
           <div className="header">{error}</div>
@@ -26,6 +28,17 @@ class CommentCreate extends Component {
     );
   };
 
+  // renderReplyInput = ({ input, label, id, meta }) => {
+  //   const className = `field $(meta.error && meta.touched ? 'error: '')`;
+  //   return (
+  //     <div className={className}>
+  //       <label>{label}</label>
+  //       <input {...input} autoComplete="off" />
+  //       {this.renderError(meta)}
+  //     </div>
+  //   );
+  // };
+
   onSubmit = formValues => {
     this.props.createComment(formValues);
   };
@@ -33,27 +46,30 @@ class CommentCreate extends Component {
   render() {
     return (
       <form
-        onSubmit={this.props.handleSubmit(this.onSubmit)}
+        // onSubmit={this.props.handleSubmit(this.onSubmit)}
         className="ui form error"
       >
         <Field
           name="description"
           component={this.renderInput}
-          label="write your comment here!"
+          placeholder="write your comment here"
           className="description_field"
+          style={{ color: "red" }}
         />
-        <button
-          className="fa fa-paper-plane "
+        <FiSend
+          onClick={this.props.handleSubmit(this.onSubmit)}
           style={{
-            position: "relative",
-            bottom: "52px",
-            left: "522px",
-            width: "40px",
-            height: "38px"
+            position: "absolute",
+            bottom: "6px",
+            left: "92%",
+            width: "25px",
+            height: "25px",
+            cursor: "pointer",
+            color: "red"
           }}
         />
 
-        {/* <i className="fa fa-paper-plane" /> */}
+        {/* <ReplyCreate /> */}
       </form>
     );
   }

@@ -4,7 +4,7 @@ import { CREATE_REPLY, FETCH_REPLIES, FETCH_REPLY } from "../actions/types";
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_REPLIES:
-      return { ...state, ..._.mapKeys(action.payload, "id") };
+      return { ...state, ..._.mapKeys(action.payload, "Fid") };
     case FETCH_REPLY:
       return { ...state, [action.payload.id]: action.payload };
     case CREATE_REPLY:

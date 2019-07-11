@@ -11,7 +11,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="ui container">
+    <div className="container" style={{ margin: "0 auto" }}>
       {/* (now incharge of our own history object) -
       using your own custome history file as opposed to the one automatically 
       created and userd by BrowserRouter - import history instead */}
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/comments/edit" exact component={CommentEdit} />
           <Route path="/comments/delete" exact component={CommentDelete} />
           <Route path="/comments/show" exact component={CommentShow} />
-          <Route path="/reply/new" exact component={CommentReply} />
+          <Route path="/replies/new" exact component={CommentReply} />
         </div>
       </BrowserRouter>
     </div>
