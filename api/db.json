@@ -1,15 +1,34 @@
 {
   "comments": [
     {
-      "0": {
-        "description": "tt"
-      },
-      "id": 1
+      "description": "Now that we’ve set the ball rolling with our first small App, ",
+      "id": 2,
+      "replies": [
+        {
+          "description": "let’s focus on your three travel mates: match, location and history."
+        },
+        {
+          "description": "let’s focus on your three travel mates: match, location and history."
+        }
+      ]
     },
     {
-      "description": "gfhgghvgvgh",
-      "id": 2,
-      "replies": []
+      "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken.",
+      "replies": [
+        {
+          "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken."
+        }
+      ],
+      "id": 3
+    },
+    {
+      "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken..",
+      "replies": [
+        {
+          "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken."
+        }
+      ],
+      "id": 4
     }
   ]
 }

@@ -40,7 +40,9 @@ class CommentCreate extends Component {
   // };
 
   onSubmit = formValues => {
-    this.props.createComment(formValues);
+    const model = formValues;
+    model.replies = [];
+   this.props.createComment(formValues);
   };
 
   render() {
