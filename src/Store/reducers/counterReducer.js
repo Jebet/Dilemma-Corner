@@ -1,11 +1,9 @@
 export default (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state.count + 1;
-      break;
+      return state + 1;
     case "DECREMENT":
-      return state.count - 1;
-      break;
+      return state - 1;
     default:
       return state;
   }

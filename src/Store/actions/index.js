@@ -1,5 +1,5 @@
-import comments from "../apis/comments";
-import replies from "../apis/comments";
+import comments from "../../apis/comments";
+import replies from "../../apis/comments";
 import {
   CREATE_COMMENT,
   EDIT_COMMENT,
@@ -8,7 +8,9 @@ import {
   DELETE_COMMENT,
   CREATE_REPLY,
   FETCH_REPLIES,
-  FETCH_REPLY
+  FETCH_REPLY,
+  INCREMENT,
+  DECREMENT
 } from "./types";
 
 export const createComment = formValues => async dispatch => {

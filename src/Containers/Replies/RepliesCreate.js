@@ -5,7 +5,8 @@ import { FiSend } from "react-icons/fi";
 import ReplyList from "./RepliesList";
 
 import { connect } from "react-redux";
-import { createReply } from "../actions";
+import { createReply } from "../../Store/actions";
+import "./RepliesCreate.scss";
 
 class RepliesCreate extends Component {
   commentId = this.props.comment.id;
@@ -52,17 +53,8 @@ class RepliesCreate extends Component {
         />
         <FiSend
           onClick={this.props.handleSubmit(this.onSubmit)}
-          style={{
-            position: "absolute",
-            bottom: "9px",
-            left: "92%",
-            width: "25px",
-            height: "25px",
-            cursor: "pointer",
-            color: "red"
-          }}
+          className="replies-send-btn"
         />
-        {/* <i className="fa fa-paper-plane" /> */}
       </form>
     );
   }

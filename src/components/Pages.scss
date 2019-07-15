@@ -5,15 +5,17 @@
   text-align: left;
   position: relative;
 }
+
 .header {
   background-color: #fff;
   text-align: center;
   min-height: 56px;
   box-shadow: 0px 4px 4px -4px #888888;
+  h4 {
+    padding-top: 10px;
+  }
 }
-.header h4 {
-  padding-top: 10px;
-}
+
 .tag-pill {
   background-color: rgb(167, 165, 165);
   color: #fff;
@@ -23,6 +25,7 @@
   font-size: 70%;
   font-weight: 200;
 }
+
 .card-reply {
   margin-right: 10px;
   border-width: 1px;
@@ -31,14 +34,17 @@
   color: #42daf5;
   font-weight: 500;
 }
+
 .reply-icon {
   padding: 1px 4px;
 }
+
 .reply-counter {
   background-color: #42daf5;
   color: #fff;
   padding: 1px 5px;
 }
+
 .card-follow {
   border-width: 1px;
   border-style: solid;
@@ -46,9 +52,11 @@
   color: #9042f5;
   font-weight: 500;
 }
+
 .follow-icon {
   padding: 1px 4px;
 }
+
 .follow-counter {
   background-color: #9042f5;
   color: #fff;
@@ -61,31 +69,40 @@
   position: relative;
   margin: 0 auto;
 }
+
 .long.arrow.alternate.left.icon {
   height: 30px;
   width: 200px;
 }
+
 #content-top {
   color: white;
 }
+
 .left.floated {
   flex-direction: row;
 }
-.ui.center.floated.header {
-  position: relative;
-  text-align: center;
+
+.ui.center {
+  &.floated.header {
+    position: relative;
+    text-align: center;
+  }
+  &.aligned.icon.header {
+    position: relative;
+    bottom: 35px;
+  }
 }
-.ui.center.aligned.icon.header {
-  position: relative;
-  bottom: 35px;
-}
+
 .titleIcons {
   display: inline;
 }
+
 .fa-bookmark-o {
   position: relative;
   left: 450px;
 }
+
 #share-top {
   position: relative;
   /* right: 500px; */
@@ -95,6 +112,7 @@
   position: relative;
   top: 40px;
 }
+
 #category {
   width: 50px;
   background-color: white;

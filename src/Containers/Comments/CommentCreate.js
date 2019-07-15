@@ -4,8 +4,9 @@ import { Field, reduxForm } from "redux-form";
 import { FiSend } from "react-icons/fi";
 
 import { connect } from "react-redux";
-import ReplyCreate from "../replies/RepliesCreate";
-import { createComment } from "../actions";
+import ReplyCreate from "../Replies/RepliesCreate";
+import { createComment } from "../../Store/actions";
+import "./CommentCreate.css";
 
 class CommentCreate extends Component {
   renderError({ error, onSubmit }) {
@@ -28,21 +29,11 @@ class CommentCreate extends Component {
     );
   };
 
-  // renderReplyInput = ({ input, label, id, meta }) => {
-  //   const className = `field $(meta.error && meta.touched ? 'error: '')`;
-  //   return (
-  //     <div className={className}>
-  //       <label>{label}</label>
-  //       <input {...input} autoComplete="off" />
-  //       {this.renderError(meta)}
-  //     </div>
-  //   );
-  // };
-
-  onSubmit = formValues => {
+  onSubmit = (formValues, e) => {
+    e.preventDefault();
     const model = formValues;
     model.replies = [];
-   this.props.createComment(formValues);
+    this.props.createComment(formValues);
   };
 
   render() {
@@ -56,22 +47,11 @@ class CommentCreate extends Component {
           component={this.renderInput}
           placeholder="write your comment here"
           className="description_field"
-          style={{ color: "red" }}
         />
         <FiSend
+          className="send-btn"
           onClick={this.props.handleSubmit(this.onSubmit)}
-          style={{
-            position: "absolute",
-            bottom: "6px",
-            left: "92%",
-            width: "25px",
-            height: "25px",
-            cursor: "pointer",
-            color: "red"
-          }}
         />
-
-        {/* <ReplyCreate /> */}
       </form>
     );
   }

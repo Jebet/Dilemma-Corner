@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import replyReducer from "../reducers/replyReducer";
-import { fetchReplies } from "../actions";
+import replyReducer from "../../Store/reducers/replyReducer";
+import { fetchReplies } from "../../Store/actions";
 import { FiShare2, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 
 import { connect } from "react-redux";
+import "./RepliesList.scss";
 
 class RepliesList extends Component {
   state = { count: 0 };
 
-  increment = increment => {
+  increment = () => {
     this.setState({
       count: this.state.count + 1
     });
   };
 
-  decrement = decrement => {
+  decrement = () => {
     this.setState({
       count: this.state.count - 1
     });
@@ -25,10 +26,9 @@ class RepliesList extends Component {
     return (
       <div className="card-body ml-5">
         <div className="row">
-          <div className="text-center" style={{ width: "15%" }}>
+          <div className="text-center">
             <img
               src="https://i.pinimg.com/736x/b9/fe/0b/b9fe0b9b07b04ce334d1627ff84ba103.jpg"
-              style={{ width: "50px", height: "50px" }}
               className="thumbnail rounded-circle"
             />
           </div>
@@ -43,15 +43,23 @@ class RepliesList extends Component {
         <hr />
         <div className="footer-icons">
           <div className="row">
-            <div className="col" onClick={this.increment}>
+            <div
+              className="col"
+              onClick={this.increment}
+              style={{ cursor: "pointer" }}
+            >
               <FiThumbsUp />
               <span>{this.state.count}</span> upvote
             </div>
-            <div className="col" onClick={this.decrement}>
+            <div
+              className="col"
+              onClick={this.decrement}
+              style={{ cursor: "pointer" }}
+            >
               <FiThumbsDown />
               <span>{this.state.count}</span>downvote
             </div>
-            <div className="col">
+            <div className="col" style={{ cursor: "pointer" }}>
               <FiShare2 />
               share
             </div>
@@ -61,16 +69,7 @@ class RepliesList extends Component {
     );
   }
   render() {
-    return (
-      <div
-        style={{
-          margin: "0 auto",
-          position: "relative"
-        }}
-      >
-        {this.renderReplyList()}
-      </div>
-    );
+    return <div>{this.renderReplyList()}</div>;
   }
 }
 

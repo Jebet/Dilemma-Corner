@@ -1,18 +1,16 @@
 import React from "react";
 import Moment from "react-moment";
 import { FiMessageCircle, FiRss, FiEye } from "react-icons/fi";
-import Comments from "./Comments/CommentCreate";
-import Replies from "./replies/RepliesCreate";
-import ModalPopUp from "./share/modalShare";
+import Comments from "../Containers/Comments/CommentCreate";
+import Replies from "../Containers/Replies/RepliesCreate";
+import ModalPopUp from "../shareModal/modalShare";
 
-import "./Header.css";
+import "./Pages.scss";
 
 const Tags = ({ tags }) => {
   return (
     <div className="col">
-      {/* {tags.map((tag, i) => ( */}
-      <small className="tag-pill">{/* {tag.value} */}Music</small>
-      {/* ))} */}
+      <small className="tag-pill">Music</small>
     </div>
   );
 };
@@ -25,7 +23,6 @@ class Header extends React.Component {
       modalShow: false
     };
 
-    // this.updateLikes = this.updateLikes.bind(this);
     this.shareOpenToggle = this.shareOpenToggle.bind(this);
   }
   toggleHidden() {
@@ -118,7 +115,6 @@ class Header extends React.Component {
           <div className="row">
             <div className="col">
               <Comments />
-              {/* <Replies /> */}
             </div>
           </div>
         </div>

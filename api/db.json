@@ -3,6 +3,7 @@
     {
       "description": "Now that we’ve set the ball rolling with our first small App, ",
       "id": 2,
+      "name": "Tracy Morgan",
       "replies": [
         {
           "description": "let’s focus on your three travel mates: match, location and history."
@@ -19,12 +20,14 @@
           "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken."
         }
       ],
-      "id": 3
+      "id": 3,
+      "name": "Tracy Morgan"
     },
     {
       "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken..",
       "replies": [
         {
+          "name": "Tracy Morgan",
           "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken."
         }
       ],

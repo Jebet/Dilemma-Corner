@@ -2,24 +2,24 @@ import React from "react";
 
 import { connect } from "react-redux";
 import { FiShare2, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
-import { fetchComments, fetchReplies } from "../actions";
+import { fetchComments, fetchReplies } from "../../Store/actions";
 import "./CommentList.css";
-import Replies from "../replies/RepliesList";
+import Replies from "../Replies/RepliesList";
 import Comments from "./CommentCreate";
-import NewReplies from "../replies/RepliesCreate";
-import replyReducer from "../reducers/replyReducer";
+import NewReplies from "../Replies/RepliesCreate"
+import replyReducer from "../../Store/reducers";
 
 const AllReplies = ({ item }) => {
-  const {replies = []} = item;
+  const { replies = [] } = item;
   return (
     <div className="col m-3">
-        {replies.map((reply, i) => (    
-          <Replies reply={reply} key={i} />
-        ))}
-        <NewReplies comment={item}/>
+      {replies.map((reply, i) => (
+        <Replies reply={reply} key={i} />
+      ))}
+      <NewReplies comment={item} />
     </div>
   );
-}
+};
 class CommentList extends React.Component {
   state = { count: 0 };
 
@@ -47,7 +47,6 @@ class CommentList extends React.Component {
             <div style={{ width: "15%" }} className="text-center">
               <img
                 src="https://i2-prod.mirror.co.uk/incoming/article14334083.ece/ALTERNATES/s615/3_Beautiful-girl-with-a-gentle-smile.jpg"
-                style={{ width: "50px", height: "50px" }}
                 className="thumbnail rounded-circle"
               />
             </div>
@@ -61,33 +60,37 @@ class CommentList extends React.Component {
 
           <div className="footer-icons">
             <div className="row">
-              <div className="col" onClick={this.increment}>
+              <div
+                className="col"
+                onClick={this.increment}
+                style={{ cursor: "pointer" }}
+              >
                 <FiThumbsUp />
                 <span>{this.state.count}</span> Upvote
               </div>
-              <div className="col" onClick={this.decrement}>
+              <div
+                className="col"
+                onClick={this.decrement}
+                style={{ cursor: "pointer" }}
+              >
                 <FiThumbsDown />
                 <span>{this.state.count}</span> Downvote
               </div>
-              <div className="col">
+              <div className="col" style={{ cursor: "pointer" }}>
                 <FiShare2 /> share
               </div>
             </div>
           </div>
 
           <div className="row">
-              <AllReplies item={comment} />
+            <AllReplies item={comment} />
           </div>
         </div>
       );
     });
   }
   render() {
-    return (
-      <div className="card" style={{ backgroundColor: "white" }}>
-        {this.renderComments()}
-      </div>
-    );
+    return <div className="card">{this.renderComments()}</div>;
   }
 }
 
