@@ -1,17 +1,48 @@
-#comment-displayed {
+/* #comment-displayed {
   /* display: grid;
   grid-gap: 5px;
   grid-template-columns: 50% 50% 1fr; */
-}
 
 .footer-icons {
   text-align: center;
   margin-top: 20px;
 }
+
+.card {
+  background-color: white;
+}
+#main-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text-center {
+  width: 15%;
+  right: 30px;
+}
 .thumbnail.rounded-circle {
   width: 50px;
   height: 50px;
 }
-.card {
-  background-color: white;
+
+@media only screen and (max-width: 600px) {
+  .thumbnail.rounded-circle {
+    width: 5%;
+    height: 5%;
+  }
+
+  .card {
+    width: 100%;
+  }
+  #main-content {
+    width: 90%;
+  }
+
+  .text-center {
+    width: 10%;
+  }
+  .thumbnail.rounded-circle {
+    width: 100%;
+    height: 50px;
+  }
 }

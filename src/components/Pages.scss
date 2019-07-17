@@ -15,6 +15,11 @@
     padding-top: 10px;
   }
 }
+.shareTop {
+  position: relative;
+  bottom: 30px;
+  left: 260px;
+}
 
 .tag-pill {
   background-color: rgb(167, 165, 165);
@@ -120,4 +125,33 @@
   left: 200px;
   border-radius: 30px;
   top: 30px;
+}
+#p {
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dilemma-section {
+    width: 98%;
+    font-size: 12px;
+  }
+  .card {
+    width: 90%;
+    font-size: 12px;
+  }
+  .header {
+    width: 100%;
+  }
+  .shareTop {
+    width: 100%;
+    position: fixed;
+  }
+  h4 {
+    padding-top: 8px;
+    font-size: 20px;
+  }
+  #p {
+    font-size: 12px;
+    text-align: left;
+  }
 }

@@ -4,13 +4,13 @@ class ShareCard extends Component {
   render() {
     return (
       <div className="socialShareContainer">
-        {/* <div
+        <div
                 className="icon_wrapper"
                 onClick={() => this.setState({ modalShow: true })}
             >
                 <FaShareAlt className="icon" /> {this.state.toggleButtonText}
                 <Modal show={this.state.modalShow} onHide={modalClose} />
-            </div> */}
+            </div>
 
         <ButtonToolbar className="socialShareContainer">
           <Button

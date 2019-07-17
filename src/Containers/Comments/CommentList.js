@@ -5,9 +5,8 @@ import { FiShare2, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 import { fetchComments, fetchReplies } from "../../Store/actions";
 import "./CommentList.css";
 import Replies from "../Replies/RepliesList";
-import Comments from "./CommentCreate";
-import NewReplies from "../Replies/RepliesCreate"
-import replyReducer from "../../Store/reducers";
+import NewReplies from "../Replies/RepliesCreate";
+// import replyReducer from "../../Store/reducers";
 
 const AllReplies = ({ item }) => {
   const { replies = [] } = item;
@@ -21,18 +20,17 @@ const AllReplies = ({ item }) => {
   );
 };
 class CommentList extends React.Component {
-  state = { count: 0 };
+  state = { clicks: 0, show: true };
 
-  increment = increment => {
-    this.setState({
-      count: this.state.count + 1
-    });
+  IncrementItem = () => {
+    this.setState({ clicks: this.state.clicks + 1 });
   };
 
-  decrement = decrement => {
-    this.setState({
-      count: this.state.count - 1
-    });
+  DecreaseItem = () => {
+    this.setState({ clicks: this.state.clicks - 1 });
+  };
+  ToggleClick = () => {
+    this.setState({ show: !this.state.show });
   };
   componentDidMount() {
     this.props.fetchComments();
@@ -42,9 +40,9 @@ class CommentList extends React.Component {
   renderComments() {
     return this.props.comments.map((comment, i) => {
       return (
-        <div key={i} className="card-body">
-          <div className="row">
-            <div style={{ width: "15%" }} className="text-center">
+        <div key={i} className="card-main">
+          <div className="row" id="main-content">
+            <div className="text-center">
               <img
                 src="https://i2-prod.mirror.co.uk/incoming/article14334083.ece/ALTERNATES/s615/3_Beautiful-girl-with-a-gentle-smile.jpg"
                 className="thumbnail rounded-circle"
@@ -62,19 +60,19 @@ class CommentList extends React.Component {
             <div className="row">
               <div
                 className="col"
-                onClick={this.increment}
+                onClick={this.IncrementItem}
                 style={{ cursor: "pointer" }}
               >
                 <FiThumbsUp />
-                <span>{this.state.count}</span> Upvote
+                <span>{this.state.clicks}</span> Upvote
               </div>
               <div
                 className="col"
-                onClick={this.decrement}
+                onClick={this.DecreaseItem}
                 style={{ cursor: "pointer" }}
               >
                 <FiThumbsDown />
-                <span>{this.state.count}</span> Downvote
+                <span>{this.state.clicks}</span> Downvote
               </div>
               <div className="col" style={{ cursor: "pointer" }}>
                 <FiShare2 /> share

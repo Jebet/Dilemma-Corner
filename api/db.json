@@ -7,9 +7,6 @@
       "replies": [
         {
           "description": "let’s focus on your three travel mates: match, location and history."
-        },
-        {
-          "description": "let’s focus on your three travel mates: match, location and history."
         }
       ]
     },
@@ -27,11 +24,16 @@
       "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken..",
       "replies": [
         {
-          "name": "Tracy Morgan",
-          "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken."
+          "description": "It’s breaking because we’re trying to access state.count, but state is undefined. Redux expected our reducer function to return a value for state, except that it (implicitly) returned undefined. Things are rightfully broken.",
+          "name": "Tracy Morgan"
         }
       ],
       "id": 4
+    },
+    {
+      "description": "It is an example to reset the state of the form. Unlike clear, reset restores the initial value. There are two ways to reset the state.",
+      "replies": [],
+      "id": 5
     }
   ]
 }

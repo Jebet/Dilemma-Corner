@@ -4,9 +4,8 @@ import { Field, reduxForm } from "redux-form";
 import { FiSend } from "react-icons/fi";
 
 import { connect } from "react-redux";
-import ReplyCreate from "../Replies/RepliesCreate";
 import { createComment } from "../../Store/actions";
-import "./CommentCreate.css";
+import "./CommentCreate.scss";
 
 class CommentCreate extends Component {
   renderError({ error, onSubmit }) {
@@ -23,14 +22,19 @@ class CommentCreate extends Component {
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input
+          {...input}
+          autoComplete="off"
+          type="text"
+          placeholder="Write comment here!"
+        />
         {this.renderError(meta)}
       </div>
     );
   };
 
-  onSubmit = (formValues, e) => {
-    e.preventDefault();
+  onSubmit = formValues => {
+    // e.preventDefault();
     const model = formValues;
     model.replies = [];
     this.props.createComment(formValues);
@@ -39,8 +43,8 @@ class CommentCreate extends Component {
   render() {
     return (
       <form
-        // onSubmit={this.props.handleSubmit(this.onSubmit)}
         className="ui form error"
+        onClick={this.props.handleSubmit(this.onSubmit)}
       >
         <Field
           name="description"
@@ -48,10 +52,7 @@ class CommentCreate extends Component {
           placeholder="write your comment here"
           className="description_field"
         />
-        <FiSend
-          className="send-btn"
-          onClick={this.props.handleSubmit(this.onSubmit)}
-        />
+        <FiSend className="send-btn" />
       </form>
     );
   }

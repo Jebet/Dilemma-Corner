@@ -24,15 +24,15 @@ class RepliesList extends Component {
   renderReplyList() {
     const reply = this.props.reply;
     return (
-      <div className="card-body ml-5">
-        <div className="row">
-          <div className="text-center">
+      <div className="card-body ml-5" id="card-main">
+        <div className="row" id="main-content">
+          <div className="text-center-2">
             <img
               src="https://i.pinimg.com/736x/b9/fe/0b/b9fe0b9b07b04ce334d1627ff84ba103.jpg"
               className="thumbnail rounded-circle"
             />
           </div>
-          <div style={{ width: "75%" }}>
+          <div style={{}} id="content-description">
             <div className="userId">{reply.id}</div>
             <div className="text">
               <p>{reply.description}</p>

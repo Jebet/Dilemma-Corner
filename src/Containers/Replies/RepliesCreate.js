@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { FiSend } from "react-icons/fi";
 
-import ReplyList from "./RepliesList";
-
 import { connect } from "react-redux";
 import { createReply } from "../../Store/actions";
 import "./RepliesCreate.scss";
@@ -29,6 +27,8 @@ class RepliesCreate extends Component {
           {...input}
           autoComplete="off"
           style={{ border: "5px solid #e8e6e6 " }}
+          type="text"
+          placeholder="Write your reply here!"
         />
         {this.renderError(meta)}
       </div>

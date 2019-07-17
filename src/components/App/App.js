@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Header from "../components/Pages";
-import CommentCreate from "../Containers/Comments/CommentCreate";
-import CommentList from "../Containers/Comments/CommentList";
-import CommentDelete from "../Containers/Comments/CommentDelete";
-import CommentShow from "../Containers/Comments/CommentShow";
-import CommentEdit from "../Containers/Comments/CommentEdit";
-import CommentReply from "../Containers/Replies/RepliesCreate";
+import Header from "../../components/Pages";
+import CommentCreate from "../../Containers/Comments/CommentCreate";
+import CommentList from "../../Containers/Comments/CommentList";
+import CommentDelete from "../../Containers/Comments/CommentDelete";
+import CommentShow from "../../Containers/Comments/CommentShow";
+import CommentEdit from "../../Containers/Comments/CommentEdit";
+import CommentReply from "../../Containers/Replies/RepliesCreate";
 import "./App.css";
 
 const App = () => {

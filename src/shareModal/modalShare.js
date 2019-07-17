@@ -1,20 +1,17 @@
 // import React, { Component } from "react";
-// import { TelegramShareButton, WhatsappShareButton } from "react-share";
 // import {
 //   FaPinterest,
 //   FaEnvelope,
 //   FaFacebook,
 //   FaLinkedin,
 //   FaTwitter,
-//   FaInstagram,
-//   FaTelegram,
-//   Fawhatsapp
+//   FaInstagram
 // } from "react-icons/fa";
-// import { Modal, Button} from "react-bootstrap";
+// import { Modal } from "react-bootstrap";
 
 // import { ShareButtonIconOnly, ShareBlockStandard } from "react-custom-share";
 // // import TestShr from "./Testshare";
-// import "../styles.scss";
+// // import "../../style.scss";
 
 // const shareBlockProps = {
 //   Instagram: "https://www.instagram.com/accounts/login/",
@@ -47,17 +44,19 @@
 //         aria-labelledby="contained-modal-title-vcenter"
 //         centered
 //       >
+//         <Modal.Header closeButton>
+//           <Modal.Title id="contained-modal-title-vcenter">
+//             <h4>Share This Page on:</h4>
+//           </Modal.Title>
+//         </Modal.Header>
 //         <Modal.Body>
-//           <h4>Share This Page on:</h4>
+//           {/* <h4>Share This Page on:</h4> */}
 //           <div className="socialShareContainer">
 //             <div>
 //               <ShareBlockStandard {...shareBlockProps} />
 //             </div>
 //           </div>
 //         </Modal.Body>
-//         <Modal.Footer>
-//           <Button onClick={this.props.onHide}>Close</Button>
-//         </Modal.Footer>
 //       </Modal>
 //     );
 //   }

@@ -1,9 +1,9 @@
 import React from "react";
 import Moment from "react-moment";
-import { FiMessageCircle, FiRss, FiEye } from "react-icons/fi";
+import { FiMessageCircle, FiRss, FiEye, FiShare2 } from "react-icons/fi";
 import Comments from "../Containers/Comments/CommentCreate";
-import Replies from "../Containers/Replies/RepliesCreate";
-import ModalPopUp from "../shareModal/modalShare";
+// import Tags from "./tags/Tags";
+// import ShareCard from "../shareModal/modalShare";
 
 import "./Pages.scss";
 
@@ -14,59 +14,31 @@ const Tags = ({ tags }) => {
     </div>
   );
 };
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       shareOpen: "closeShare",
-      isHidden: true,
+      toggleButtonText: "  Share",
       modalShow: false
     };
-
-    this.shareOpenToggle = this.shareOpenToggle.bind(this);
-  }
-  toggleHidden() {
-    this.setState({
-      isHidden: !this.state.isHidden
-    });
-  }
-  shareOpenToggle() {
-    if (this.state.shareOpen === "closeShare") {
-      this.setState({
-        shareOpen: "openShare"
-      });
-    } else {
-      this.setState({
-        shareOpen: "closeShare",
-        toggleButtonText: "  Share"
-      });
-    }
   }
 
   render() {
     let modalClose = () => this.setState({ modalShow: false });
 
-    const url = window.location.href;
-    //URL patterns for Social media sites share functionalities
-    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-    const twitterUrl = `https://twitter.com/home?status=${url}`;
-    const linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}`;
     return (
       <div className="dilemma-section">
         <div onClick={this.handleClose}>
           <div className="header">
-            <h4> Question</h4>
-            {/* <div className="titleIcons">
-              <span className="fa fa-bookmark-o" />
-              <span
-                className="fa fa-share-alt "
-                // style={{ position: "relative", left: "460px", bottom: "0px" }}
-                // onClick={() => this.setState({ modalShow: true })}
-                variant="light"
-              >
-                <ModalPopUp show={this.state.modalShow} onHide={modalClose} />
-              </span>
-            </div> */}
+            <h4>
+              Question
+              {/* <span onClick={() => this.setState({ modalShow: true })}> */}
+              {/* </span> */}
+              {/* <ShareCard show={this.state.modalShow} onHide={modalClose} /> */}
+            </h4>
+            <FiShare2 className="shareTop" />
           </div>
 
           <div className=" m-2">

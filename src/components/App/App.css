@@ -1,0 +1,17 @@
+body {
+  background-color: #f4fcff;
+  padding: 0;
+}
+.container {
+  height: 100;
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
