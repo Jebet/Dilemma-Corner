@@ -26,9 +26,10 @@ class RepliesCreate extends Component {
         <input
           {...input}
           autoComplete="off"
-          style={{ border: "5px solid #e8e6e6 " }}
+          style={{  }}
           type="text"
           placeholder="Write your reply here!"
+          id="input-field"
         />
         {this.renderError(meta)}
       </div>

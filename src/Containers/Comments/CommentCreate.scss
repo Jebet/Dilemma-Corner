@@ -25,6 +25,11 @@
   margin: 0 auto;
   padding: 10px;
 }
+#input-field {
+  border: 5px solid #e8e6e6;
+  font-size: 12px;
+  font-family: sans-serif;
+}
 @media only screen and (max-width: 600px) {
   .description-field {
     max-width: 100%;
@@ -41,5 +46,15 @@
   #mainContent {
     width: 100%;
     text-align: center;
+  }
+  .send-btn {
+    width: 15px;
+    height: 15px;
+    bottom: 8px;
+    position: absolute;
+  }
+  #input-field {
+    border: 2px solid #e8e6e6;
+    font-size: 11px;
   }
 }

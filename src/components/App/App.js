@@ -11,7 +11,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="container" style={{ margin: "0 auto" }}>
+    <div className="">
       {/* (now incharge of our own history object) -
       using your own custome history file as opposed to the one automatically 
       created and userd by BrowserRouter - import history instead */}

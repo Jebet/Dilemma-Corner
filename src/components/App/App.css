@@ -2,7 +2,7 @@ body {
   background-color: #f4fcff;
   padding: 0;
 }
-.container {
+.app-wrapper {
   height: 100;
   width: 600px;
   margin: 0 auto;
@@ -11,7 +11,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    width: 100%;
+  .app-wrapper {
+    width: 98%;
   }
 }

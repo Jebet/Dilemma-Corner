@@ -32,7 +32,7 @@ class RepliesList extends Component {
               className="thumbnail rounded-circle"
             />
           </div>
-          <div style={{}} id="content-description">
+          <div id="content-description">
             <div className="userId">{reply.id}</div>
             <div className="text">
               <p>{reply.description}</p>
@@ -40,7 +40,7 @@ class RepliesList extends Component {
           </div>
         </div>
 
-        <hr />
+        {/* <hr /> */}
         <div className="footer-icons">
           <div className="row">
             <div
@@ -59,7 +59,7 @@ class RepliesList extends Component {
               <FiThumbsDown />
               <span>{this.state.count}</span>downvote
             </div>
-            <div className="col" style={{ cursor: "pointer" }}>
+            <div className="col" style={{ cursor: "pointer" }} >
               <FiShare2 />
               share
             </div>
@@ -69,7 +69,7 @@ class RepliesList extends Component {
     );
   }
   render() {
-    return <div>{this.renderReplyList()}</div>;
+    return <div style={{ width: "100%" }}>{this.renderReplyList()}</div>;
   }
 }
 

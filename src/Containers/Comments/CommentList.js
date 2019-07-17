@@ -40,7 +40,11 @@ class CommentList extends React.Component {
   renderComments() {
     return this.props.comments.map((comment, i) => {
       return (
-        <div key={i} className="card-main">
+        <div
+          key={i}
+          className="card-main"
+          style={{ position: "relative", top: "10px" }}
+        >
           <div className="row" id="main-content">
             <div className="text-center">
               <img

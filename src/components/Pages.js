@@ -33,20 +33,21 @@ class Header extends React.Component {
         <div onClick={this.handleClose}>
           <div className="header">
             <h4>
-              Question
+              Question <FiShare2 className="shareTop" />
               {/* <span onClick={() => this.setState({ modalShow: true })}> */}
               {/* </span> */}
               {/* <ShareCard show={this.state.modalShow} onHide={modalClose} /> */}
             </h4>
-            <FiShare2 className="shareTop" />
           </div>
 
           <div className=" m-2">
             <p>
-              Steven had been in a relationship with Emily for two years when he
-              cheated on her with Stephanie. Although Steven was the one in a
-              relationship, Stephanie knew that he was taken and yet pursued
-              Steven and then slept with him anyway. Who’s more in the wrong?
+              <b>
+                Steven had been in a relationship with Emily for two years when
+                he cheated on her with Stephanie. Although Steven was the one in
+                a relationship, Stephanie knew that he was taken and yet pursued
+                Steven and then slept with him anyway. Who’s more in the wrong?
+              </b>
             </p>
             <div className="row">
               <Tags />

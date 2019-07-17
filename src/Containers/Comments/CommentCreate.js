@@ -27,6 +27,7 @@ class CommentCreate extends Component {
           autoComplete="off"
           type="text"
           placeholder="Write comment here!"
+          id="input-field"
         />
         {this.renderError(meta)}
       </div>
